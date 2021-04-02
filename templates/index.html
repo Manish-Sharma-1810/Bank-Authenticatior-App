@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ML API</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename ='style.css') }}" />
+        
+    </head>
+
+    <body>
+        <div class="home">
+            <h1 style="border: 2px solid Tomato; color: rgb(207, 11, 11); margin-bottom: 20px; margin-top: 10px;">Bank Note Authentication Using ML</h1>
+            <!-- Main Input For Receiving Query to our ML -->
+            <form action="/predict" method="POST">
+                <table align="center" cellpadding = "15" style="margin-bottom: 5%;">
+
+                    <!----- Variance ---------------------------------------------------------->
+                    <tr>
+                        <td><sup>*</sup>Variance</td>
+                        <td><input type="text" class="input-box" name="variance" placeholder="Variance" required="*" /></td>
+                    </tr>
+
+                    <!----- Skewness ---------------------------------------------------------->
+                    <tr>
+                        <td><sup>*</sup>Skewness</td>
+                        <td><input type="text" class="input-box" name="skewness" placeholder="Skewness" required="*" /></td>
+                    </tr>
+
+                    <!----- Curtosis ---------------------------------------------------------->
+                    <tr>
+                        <td><sup>*</sup>Curtosis</td>
+                        <td><input type="text" class="input-box" name="curtosis" placeholder="Curtosis" required="*" /></td>
+                    </tr>
+
+                    <!----- Entropy ---------------------------------------------------------->
+                    <tr>
+                        <td><sup>*</sup>Entropy</td>
+                        <td><input type="text" class="input-box" name="entropy" placeholder="Entropy" required="*" /></td>
+                    </tr>
+                </table>
+
+                <p><button type="submit" class="predict-btn">Predict</button></p>
+            </form>
+
+            <br>
+            <br>
+            <h2>{{predicted_value}}</h2>
+
+        </div>
+    </body>
+
+</html>
